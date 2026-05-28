@@ -1,4 +1,3 @@
-import React from "react";
 import Footer from "./student/Footer";
 import { Link } from "react-router-dom";
 

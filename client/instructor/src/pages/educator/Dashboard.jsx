@@ -8,7 +8,7 @@ import { appConfig } from "../../redux/service/api";
 
 const Dashboard = () => {
   const dispatch = useDispatch();
-  const currency = appConfig.currency || "INR ";
+  const currency = appConfig.currency || "₹";
   const dashboardData = useSelector((state) => state.educator.dashboard);
   const user = useSelector((state) => state.auth.user);
   const isEducator = user?.role === "instructor" && user?.status === "approved";

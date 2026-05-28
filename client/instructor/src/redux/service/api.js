@@ -12,5 +12,5 @@ export const authHeaders = (token) => ({
 
 export const appConfig = {
   backendUrl,
-  currency: import.meta.env.VITE_CURRENCY,
+  currency: import.meta.env.VITE_CURRENCY || "₹",
 };

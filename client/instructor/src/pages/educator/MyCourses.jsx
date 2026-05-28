@@ -33,7 +33,7 @@ const getEditableContent = (course) =>
 
 const MyCourses = () => {
   const dispatch = useDispatch();
-  const currency = appConfig.currency || "INR";
+  const currency = appConfig.currency || "₹";
   const courses = useSelector((state) => state.educator.courses);
   const { coursesLoaded, loading } = useSelector((state) => state.educator);
   const user = useSelector((state) => state.auth.user);
@@ -290,7 +290,7 @@ const MyCourses = () => {
                           <img src={course.courseThumbnail} alt="Course" className="w-16 h-10 object-cover rounded" />
                           <span className="truncate hidden md:block">{course.courseTitle}</span>
                         </td>
-                        <td className="px-4 py-3">{price === 0 ? "Free" : `$ ${price.toFixed(2)}`}</td>
+                        <td className="px-4 py-3">{price === 0 ? "Free" : `${currency} ${price.toFixed(2)}`}</td>
                         <td className="px-4 py-3">
                           {currency} {Math.floor(course.enrolledStudents.length * price).toFixed(2)}
                         </td>
@@ -339,7 +339,7 @@ const MyCourses = () => {
                     {viewCourse.enrolledStudents.length} students enrolled - {viewCourse.discount}% discount
                   </p>
                   <p className="mt-1 text-sm text-gray-500">
-                    Price: {getDiscountedPrice(viewCourse) === 0 ? "Free" : `$ ${getDiscountedPrice(viewCourse).toFixed(2)}`}
+                    Price: {getDiscountedPrice(viewCourse) === 0 ? "Free" : `${currency} ${getDiscountedPrice(viewCourse).toFixed(2)}`}
                   </p>
                 </div>
               </div>
